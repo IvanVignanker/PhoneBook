@@ -1,6 +1,7 @@
 package com.example.demo.backend.controller;
 
 
+import com.example.demo.backend.model.dto.ContactsDto;
 import com.example.demo.backend.model.entity.PhoneNumbersEntity;
 import com.example.demo.backend.model.entity.UsersEntity;
 import com.example.demo.backend.repo.AddressesRepository;
@@ -22,14 +23,19 @@ public class ContactController {
     ContactsService contactsService;
 
     @GetMapping(value = "/getAllUsers")
-    public List<UsersEntity> getUsersRepository() {
-        return contactsService.getUsersRepository();
+    public List<ContactsDto> getAllUsers() {
+        return contactsService.getAllContacts();
     }
 
-    @GetMapping(value = "/phoneNumber")
-    public List<PhoneNumbersRepository> getPhoneNumbersRepository() {
-        return contactsService.getPhoneNumbersRepository();
+    @GetMapping(value = "/getUserById")
+    public ContactsDto getUserById(Long id) {
+        return contactsService.getContact(id);
     }
+
+//    @GetMapping(value = "/phoneNumber")
+//    public List<PhoneNumbersRepository> getPhoneNumbersRepository() {
+//        return contactsService.getPhoneNumbersRepository();
+//    }
 //
 //    @GetMapping(value = "/address")
 //    public AddressesRepository getAddressesRepository() {

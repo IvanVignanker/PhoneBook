@@ -13,18 +13,14 @@ import java.util.List;
 @Service
 public interface ContactsService {
 
-    void createContact (ContactsDto contactsDto);
-
-    void updateContact (Long id, ContactsDto contactsDto);
-
-    void deleteContact (Long id);
-
-    ContactsDto getContact (Long id);
+//    void createContact (ContactsDto contactsDto);
+//    void updateContact (Long id, ContactsDto contactsDto);
+//    void deleteContact (Long id);
+//    ContactsDto getContact (Long id);
 
     List<ContactsDto> getAllContacts();
-
-    ContactsDto getContactByName (String name);
-
-    ContactsDto getContactByPhoneNumber (String phoneNumber);
+    ContactsDto getContact(Long id);
+//    ContactsDto getContactByName (String name);
+//    ContactsDto getContactByPhoneNumber (String phoneNumber);
 
 }

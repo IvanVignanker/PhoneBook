@@ -9,12 +9,15 @@ import javax.validation.constraints.Past;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
+//@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter @Getter
 @Builder
-@Transactional(readOnly = true)
+//@Transactional(readOnly = true)
 public class PhoneNumbersEntity {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
